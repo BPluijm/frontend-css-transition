@@ -3,12 +3,45 @@
     --menu-bar-height: 10px;
 }
 
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: inline-block;
+    padding: 20px 0;
+}
+
+.container:hover {
+    background-color: transparent;
+}
+
+.container:hover #menu {
+    background-color: transparent;
+    transition: background 200ms ease-in-out;
+}
+
+#menu:hover::before {
+    transform: rotate(45deg);
+    transition: ease-in-out;
+    top: 0;
+}
+
+#menu:hover::after {
+    transform: rotate(135deg);
+    transition: ease-in-out;
+    top: 0;
+}
+
 #menu {
     background-color: #D84282;
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
+    margin: calc(var(--menu-bar-height) * 2) 0;
 }
 
 #menu::before,
